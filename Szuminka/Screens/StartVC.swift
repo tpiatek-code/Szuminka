@@ -29,7 +29,6 @@ class StartVC: UIViewController {
         view.backgroundColor = .systemGray3
         layoutUI()
         confActionButtons()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
