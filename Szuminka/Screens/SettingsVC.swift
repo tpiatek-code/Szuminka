@@ -35,7 +35,6 @@ class SettingsVC: UIViewController {
     }
     
 
-    
 //    private func configurePickerUI() {
 //        let napPicker = UIPickerView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 //        napPicker.translatesAutoresizingMaskIntoConstraints = false
@@ -95,9 +94,6 @@ class SettingsVC: UIViewController {
     @objc func dismissVC() {
         dismiss(animated: true)
     }
-
-    
-
 }
 
 

@@ -23,7 +23,6 @@ class SleepVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
         layoutUI()
         configureLabelUI()
         convertHours(hours: 12.0)
@@ -105,16 +104,10 @@ class SleepVC: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         self.navigationItem.rightBarButtonItem = doneButton
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        
     }
     
     
     @objc func dismissVC() {
         dismiss(animated: true)
-        
     }
-    
-    
-    
 }
