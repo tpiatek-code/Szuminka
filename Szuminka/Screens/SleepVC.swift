@@ -13,20 +13,54 @@ class SleepVC: UIViewController {
     var timer: Timer?
     
     var settingsVC = SettingsVC()
-    let firstVC = FirstChildVC()
+    let firstChildVC = FirstChildVC()
     
     var hour = 0
     var mins = 0
     var secs = 0
-
+    
+    var napHour: Double!
+    var nightHour: Double!
+    
+    var label = UILabel()
+    
+    var data: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         layoutUI()
         configureLabelUI()
-        convertHours(hours: 12.0)
+        
+        checkForKind()
+        
     }
+    
+    func checkForKind() {
+        if title == Constants.napButton {
+            convertHours(hours: napHour)
+        } else if title == Constants.nightButton {
+            convertHours(hours: nightHour)
+        }
+        
+    }
+
+    
+//    private func configureLabel() {
+//        view.addSubview(label)
+//
+//        label.textAlignment = .center
+//        label.textColor = .label
+//        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+//        label.text = "placeholder"
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint.activate([
+//            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+//            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//        ])
+//
+//    }
     
     
     func convertHours(hours: Double) {
@@ -41,7 +75,7 @@ class SleepVC: UIViewController {
             hour = Int(computedHours)
             mins = Int(minutes)
             secs = Int(seconds)
-            
+
             calculateLabel()
         }
 
@@ -75,7 +109,7 @@ class SleepVC: UIViewController {
         })
         
     }
-
+    
     
     private func updateLabel(count: String) {
         timeLabel.text = count
@@ -96,9 +130,7 @@ class SleepVC: UIViewController {
             timeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
-    
-    
-    
+
     
     func layoutUI() {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
@@ -111,3 +143,6 @@ class SleepVC: UIViewController {
         dismiss(animated: true)
     }
 }
+
+
+

@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct KindSleep: Codable {
-    var kindSleep: String
+struct SleepTime: Codable {
+    var napTime: Double
+    var nightTime: Double
 }

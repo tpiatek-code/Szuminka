@@ -30,7 +30,8 @@ class FirstChildVC: UIViewController {
     
     private func configureBackground() {
         view.layer.cornerRadius = 20
-        view.backgroundColor = .secondarySystemBackground
+        //view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor = CustomColors.granatLight
     }
     
     private func configureLabel() {
@@ -67,9 +68,13 @@ class FirstChildVC: UIViewController {
     
     @objc func buttonAction() {
         hourDelegate?.timeSelected(howLong: 5.0)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(2.0, forKey: "nap")
+        defaults.set(12.0, forKey: "night")
+        
         print("Button pressed")
         
-
     }
 }
 

@@ -39,8 +39,6 @@ class SecondChildVC: UIViewController {
         ])
         
     }
-    
-    
 
 
 }

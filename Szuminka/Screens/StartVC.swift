@@ -11,8 +11,8 @@ import AVFoundation
 
 class StartVC: UIViewController {
     
-    let napButton = TPButton(backgroundColor: .systemGray, title: Constants.napButton)
-    let nightButton = TPButton(backgroundColor: .systemGray, title: Constants.nightButton)
+    let napButton = TPButton(backgroundColor: CustomColors.granat, title: Constants.napButton)
+    let nightButton = TPButton(backgroundColor: CustomColors.granat, title: Constants.nightButton)
     let gearButton = TPGearButton()
     
     var player: AVAudioPlayer?
@@ -24,11 +24,18 @@ class StartVC: UIViewController {
     
     var settingsVC = SettingsVC()
     
+    
+    
+    //print(data)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray3
         layoutUI()
+        setupBackground()
         confActionButtons()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,15 +46,26 @@ class StartVC: UIViewController {
     
     @objc func buttonActionNap() {
         sleepTime(title: Constants.napButton)
+        
+        let defaults = UserDefaults.standard
+        var dataNap = defaults.double(forKey: "nap")
+        sleepVC.data = dataNap
     }
     
     @objc func buttonActionNight() {
         sleepTime(title: Constants.nightButton)
+        
+        let defaults = UserDefaults.standard
+        var dataNight = defaults.double(forKey: "night")
+        sleepVC.data = dataNight
     }
     
     func sleepTime(title: String) {
         let sleepVC = SleepVC()
         sleepVC.title = title
+        sleepVC.napHour = 3.0
+        sleepVC.nightHour = 12.0
+        
         let navController = UINavigationController(rootViewController: sleepVC)
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
