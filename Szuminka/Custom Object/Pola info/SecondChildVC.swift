@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondChildVC: ParrentVC {
+class SecondChildVC: ParentVC {
     
     let nightArray = [7, 8, 9, 10, 11, 12]
     
@@ -20,8 +20,10 @@ class SecondChildVC: ParrentVC {
     override func configurePickerUI() {
         super.configurePickerUI()
         
-        let row = UserDefaults.standard.integer(forKey: "pickerViewRow")
-        customPicker.selectRow(row, inComponent: 0, animated: false)
+        DispatchQueue.main.async {
+            let row = UserDefaults.standard.integer(forKey: "pickerViewRowNight")
+            self.customPicker.selectRow(row, inComponent: 0, animated: false)
+        }
         
         customPicker.delegate = self
         customPicker.dataSource = self
@@ -47,7 +49,7 @@ extension SecondChildVC: UIPickerViewDelegate, UIPickerViewDataSource {
             defaults.set(self.nightArray[row], forKey: "night")
             
             //let row = self.nightArray[row]
-            UserDefaults.standard.set(row, forKey: "pickerViewRow")
+            UserDefaults.standard.set(row, forKey: "pickerViewRowNight")
         }
         
         //hourDelegate?.timeSelected(napHowLong: napArray[row])

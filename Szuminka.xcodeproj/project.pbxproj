@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0533B1CD296C2153006CBBBB /* ParrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533B1CC296C2153006CBBBB /* ParrentVC.swift */; };
+		0533B1CF296C6000006CBBBB /* ParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533B1CE296C6000006CBBBB /* ParentVC.swift */; };
 		053A1A6C2951E1C6005C6FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */; };
 		053A1A6E2951E1C6005C6FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6D2951E1C6005C6FF6 /* SceneDelegate.swift */; };
 		053A1A702951E1C6005C6FF6 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6F2951E1C6005C6FF6 /* StartVC.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0533B1CC296C2153006CBBBB /* ParrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParrentVC.swift; sourceTree = "<group>"; };
+		0533B1CE296C6000006CBBBB /* ParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentVC.swift; sourceTree = "<group>"; };
 		053A1A682951E1C6005C6FF6 /* Szuminka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Szuminka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053A1A6D2951E1C6005C6FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		05CBC816295493B700FE3F1C /* Pola info */ = {
 			isa = PBXGroup;
 			children = (
-				0533B1CC296C2153006CBBBB /* ParrentVC.swift */,
+				0533B1CE296C6000006CBBBB /* ParentVC.swift */,
 				05725B3629669E5400B0EF7A /* FirstChildVC.swift */,
 				05725B382966D62400B0EF7A /* SecondChildVC.swift */,
 			);
@@ -225,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0533B1CD296C2153006CBBBB /* ParrentVC.swift in Sources */,
 				05421EDC2952009E0042261D /* SleepVC.swift in Sources */,
 				053A1A852951EA7A005C6FF6 /* Constants.swift in Sources */,
 				05D9B5092953293A00AFEC13 /* TPGearButton.swift in Sources */,
@@ -236,6 +235,7 @@
 				053F0D392968AE2D006EB52F /* Images.swift in Sources */,
 				05725B392966D62400B0EF7A /* SecondChildVC.swift in Sources */,
 				053A1A822951E463005C6FF6 /* TPButton.swift in Sources */,
+				0533B1CF296C6000006CBBBB /* ParentVC.swift in Sources */,
 				053F0D3B2968B1E7006EB52F /* Ext+background.swift in Sources */,
 				05D9B50B29534A8F00AFEC13 /* SettingsVC.swift in Sources */,
 				053A1A6C2951E1C6005C6FF6 /* AppDelegate.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstChildVC: ParrentVC {
+class FirstChildVC: ParentVC {
     
     let napArray = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
     
@@ -22,17 +22,13 @@ class FirstChildVC: ParrentVC {
     override func configurePickerUI() {
         super.configurePickerUI()
         
-        let row = UserDefaults.standard.integer(forKey: "pickerViewRow")
-        customPicker.selectRow(row, inComponent: 0, animated: false)
+        DispatchQueue.main.async {
+            let row = UserDefaults.standard.integer(forKey: "pickerViewRowNap")
+            self.customPicker.selectRow(row, inComponent: 0, animated: false)
+        }
         
         customPicker.delegate = self
         customPicker.dataSource = self
-    }
-    
-    
-    private func configureBackground() {
-        view.layer.cornerRadius = 20
-        view.backgroundColor = CustomColors.granatLight
     }
     
 }
@@ -56,7 +52,7 @@ extension FirstChildVC: UIPickerViewDelegate, UIPickerViewDataSource {
             defaults.set(self.napArray[row], forKey: "nap")
             
             //let row = self.napArray[row]
-            UserDefaults.standard.set(row, forKey: "pickerViewRow")
+            UserDefaults.standard.set(row, forKey: "pickerViewRowNap")
         }
         //hourDelegate?.timeSelected(napHowLong: napArray[row])
         
