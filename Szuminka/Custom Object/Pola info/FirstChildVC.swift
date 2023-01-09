@@ -7,74 +7,58 @@
 
 import UIKit
 
-protocol PassDataDelegate: AnyObject {
-    func timeSelected(howLong: Double)
-}
-
-
-class FirstChildVC: UIViewController {
+class FirstChildVC: ParrentVC {
     
-    var label = UILabel()
-    var buttonTest = TPButton(backgroundColor: .systemPink, title: "test button")
+    let napArray = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
     
-    weak var hourDelegate: PassDataDelegate?
+//    weak var hourDelegate: PassDataToNapDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureBackground()
-        configureLabel()
-        confActionButton()
-
+        configurePickerUI()
+        configureLabel(labelName: Constants.napButton)
     }
+    
+    override func configurePickerUI() {
+        super.configurePickerUI()
+        
+        let row = UserDefaults.standard.integer(forKey: "pickerViewRow")
+        customPicker.selectRow(row, inComponent: 0, animated: false)
+        
+        customPicker.delegate = self
+        customPicker.dataSource = self
+    }
+    
     
     private func configureBackground() {
         view.layer.cornerRadius = 20
-        //view.backgroundColor = .secondarySystemBackground
         view.backgroundColor = CustomColors.granatLight
     }
     
-    private func configureLabel() {
-        view.addSubview(label)
-        label.textAlignment = .center
-        label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.text = Constants.napButton
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
-    }
-    
-    func confActionButton() {
-        view.addSubview(buttonTest)
-        
-        buttonTest.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-        let widthButton:CGFloat = 180
-        let heightButton:CGFloat = 60
-        
-        NSLayoutConstraint.activate([
-            buttonTest.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttonTest.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
-            buttonTest.widthAnchor.constraint(equalToConstant: widthButton),
-            buttonTest.heightAnchor.constraint(equalToConstant: heightButton),
+}
 
-        ])
+extension FirstChildVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    @objc func buttonAction() {
-        hourDelegate?.timeSelected(howLong: 5.0)
-        
-        let defaults = UserDefaults.standard
-        defaults.set(2.0, forKey: "nap")
-        defaults.set(12.0, forKey: "night")
-        
-        print("Button pressed")
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return napArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(napArray[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DispatchQueue.main.async {
+            let defaults = UserDefaults.standard
+            defaults.set(self.napArray[row], forKey: "nap")
+            
+            //let row = self.napArray[row]
+            UserDefaults.standard.set(row, forKey: "pickerViewRow")
+        }
+        //hourDelegate?.timeSelected(napHowLong: napArray[row])
         
     }
 }
-

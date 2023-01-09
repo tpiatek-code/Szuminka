@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0533B1CD296C2153006CBBBB /* ParrentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0533B1CC296C2153006CBBBB /* ParrentVC.swift */; };
 		053A1A6C2951E1C6005C6FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */; };
 		053A1A6E2951E1C6005C6FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6D2951E1C6005C6FF6 /* SceneDelegate.swift */; };
 		053A1A702951E1C6005C6FF6 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A6F2951E1C6005C6FF6 /* StartVC.swift */; };
@@ -23,7 +24,6 @@
 		05725B3729669E5400B0EF7A /* FirstChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05725B3629669E5400B0EF7A /* FirstChildVC.swift */; };
 		05725B392966D62400B0EF7A /* SecondChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05725B382966D62400B0EF7A /* SecondChildVC.swift */; };
 		05831C152953079E005E611B /* Suszarka.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 05831C142953079E005E611B /* Suszarka.m4a */; };
-		05A52C302957165500634D37 /* KindSleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A52C2F2957165500634D37 /* KindSleep.swift */; };
 		05D9B5092953293A00AFEC13 /* TPGearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D9B5082953293A00AFEC13 /* TPGearButton.swift */; };
 		05D9B50B29534A8F00AFEC13 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D9B50A29534A8F00AFEC13 /* SettingsVC.swift */; };
 		05D9B50F29534EC900AFEC13 /* Hair-dryer-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 05D9B50E29534EC900AFEC13 /* Hair-dryer-sound.mp3 */; };
@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0533B1CC296C2153006CBBBB /* ParrentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParrentVC.swift; sourceTree = "<group>"; };
 		053A1A682951E1C6005C6FF6 /* Szuminka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Szuminka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053A1A6D2951E1C6005C6FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		05725B3629669E5400B0EF7A /* FirstChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstChildVC.swift; sourceTree = "<group>"; };
 		05725B382966D62400B0EF7A /* SecondChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondChildVC.swift; sourceTree = "<group>"; };
 		05831C142953079E005E611B /* Suszarka.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Suszarka.m4a; sourceTree = "<group>"; };
-		05A52C2F2957165500634D37 /* KindSleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindSleep.swift; sourceTree = "<group>"; };
 		05D9B5082953293A00AFEC13 /* TPGearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPGearButton.swift; sourceTree = "<group>"; };
 		05D9B50A29534A8F00AFEC13 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		05D9B50E29534EC900AFEC13 /* Hair-dryer-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Hair-dryer-sound.mp3"; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				053F0D35296838EC006EB52F /* Manager */,
-				05A52C2C2957163C00634D37 /* Model */,
 				053A1A832951EA6A005C6FF6 /* Utilities */,
 				053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */,
 				053A1A6D2951E1C6005C6FF6 /* SceneDelegate.swift */,
@@ -143,17 +142,10 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		05A52C2C2957163C00634D37 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				05A52C2F2957165500634D37 /* KindSleep.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		05CBC816295493B700FE3F1C /* Pola info */ = {
 			isa = PBXGroup;
 			children = (
+				0533B1CC296C2153006CBBBB /* ParrentVC.swift */,
 				05725B3629669E5400B0EF7A /* FirstChildVC.swift */,
 				05725B382966D62400B0EF7A /* SecondChildVC.swift */,
 			);
@@ -233,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0533B1CD296C2153006CBBBB /* ParrentVC.swift in Sources */,
 				05421EDC2952009E0042261D /* SleepVC.swift in Sources */,
 				053A1A852951EA7A005C6FF6 /* Constants.swift in Sources */,
 				05D9B5092953293A00AFEC13 /* TPGearButton.swift in Sources */,
@@ -242,7 +235,6 @@
 				053F0D34296838E8006EB52F /* PersistanceManager.swift in Sources */,
 				053F0D392968AE2D006EB52F /* Images.swift in Sources */,
 				05725B392966D62400B0EF7A /* SecondChildVC.swift in Sources */,
-				05A52C302957165500634D37 /* KindSleep.swift in Sources */,
 				053A1A822951E463005C6FF6 /* TPButton.swift in Sources */,
 				053F0D3B2968B1E7006EB52F /* Ext+background.swift in Sources */,
 				05D9B50B29534A8F00AFEC13 /* SettingsVC.swift in Sources */,

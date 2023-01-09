@@ -7,38 +7,53 @@
 
 import UIKit
 
-class SecondChildVC: UIViewController {
+class SecondChildVC: ParrentVC {
     
-    var label = UILabel()
+    let nightArray = [7, 8, 9, 10, 11, 12]
     
-    var sleepTime = 12.0
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configureBackground()
-        configureLabel()
+        configurePickerUI()
+        configureLabel(labelName: Constants.nightButton)
     }
     
-    private func configureBackground() {
-        view.layer.cornerRadius = 20
-        view.backgroundColor = .secondarySystemBackground
-    }
-    
-    private func configureLabel() {
-        view.addSubview(label)
-        label.textAlignment = .center
-        label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.text = Constants.nightButton
-        label.translatesAutoresizingMaskIntoConstraints = false
+    override func configurePickerUI() {
+        super.configurePickerUI()
         
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 30),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        let row = UserDefaults.standard.integer(forKey: "pickerViewRow")
+        customPicker.selectRow(row, inComponent: 0, animated: false)
         
+        customPicker.delegate = self
+        customPicker.dataSource = self
     }
-
-
 }
+
+extension SecondChildVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return nightArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(nightArray[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DispatchQueue.main.async {
+            let defaults = UserDefaults.standard
+            defaults.set(self.nightArray[row], forKey: "night")
+            
+            //let row = self.nightArray[row]
+            UserDefaults.standard.set(row, forKey: "pickerViewRow")
+        }
+        
+        //hourDelegate?.timeSelected(napHowLong: napArray[row])
+    }
+    
+    
+    
+}
+

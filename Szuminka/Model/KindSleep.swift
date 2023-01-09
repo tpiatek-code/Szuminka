@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SleepTime: Codable {
-    var napTime: Double
-    var nightTime: Double
-}
+//struct SleepTime: Codable {
+//    var napTime: Double
+//    var nightTime: Double
+//}
