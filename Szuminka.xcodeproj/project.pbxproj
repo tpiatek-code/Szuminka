@@ -18,7 +18,6 @@
 		053A1A852951EA7A005C6FF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A842951EA7A005C6FF6 /* Constants.swift */; };
 		053F0D34296838E8006EB52F /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F0D33296838E8006EB52F /* PersistanceManager.swift */; };
 		053F0D372968A6D6006EB52F /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F0D362968A6D6006EB52F /* CustomColors.swift */; };
-		053F0D392968AE2D006EB52F /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F0D382968AE2D006EB52F /* Images.swift */; };
 		053F0D3B2968B1E7006EB52F /* Ext+background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F0D3A2968B1E7006EB52F /* Ext+background.swift */; };
 		05421EDC2952009E0042261D /* SleepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05421EDB2952009E0042261D /* SleepVC.swift */; };
 		05725B3729669E5400B0EF7A /* FirstChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05725B3629669E5400B0EF7A /* FirstChildVC.swift */; };
@@ -44,7 +43,6 @@
 		053A1A842951EA7A005C6FF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		053F0D33296838E8006EB52F /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		053F0D362968A6D6006EB52F /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		053F0D382968AE2D006EB52F /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		053F0D3A2968B1E7006EB52F /* Ext+background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+background.swift"; sourceTree = "<group>"; };
 		05421EDB2952009E0042261D /* SleepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepVC.swift; sourceTree = "<group>"; };
 		05725B3629669E5400B0EF7A /* FirstChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstChildVC.swift; sourceTree = "<group>"; };
@@ -86,6 +84,7 @@
 		053A1A6A2951E1C6005C6FF6 /* Szuminka */ = {
 			isa = PBXGroup;
 			children = (
+				05C4B9D9296D569B0017E2E4 /* Extensions */,
 				053F0D35296838EC006EB52F /* Manager */,
 				053A1A832951EA6A005C6FF6 /* Utilities */,
 				053A1A6B2951E1C6005C6FF6 /* AppDelegate.swift */,
@@ -98,7 +97,6 @@
 				053A1A762951E1C7005C6FF6 /* LaunchScreen.storyboard */,
 				053A1A792951E1C7005C6FF6 /* Info.plist */,
 				05D9B50E29534EC900AFEC13 /* Hair-dryer-sound.mp3 */,
-				053F0D3A2968B1E7006EB52F /* Ext+background.swift */,
 			);
 			path = Szuminka;
 			sourceTree = "<group>";
@@ -126,7 +124,6 @@
 		053A1A832951EA6A005C6FF6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				053F0D382968AE2D006EB52F /* Images.swift */,
 				053A1A842951EA7A005C6FF6 /* Constants.swift */,
 				05D9B51029534F2E00AFEC13 /* Calculations.swift */,
 				053F0D362968A6D6006EB52F /* CustomColors.swift */,
@@ -140,6 +137,14 @@
 				053F0D33296838E8006EB52F /* PersistanceManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		05C4B9D9296D569B0017E2E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				053F0D3A2968B1E7006EB52F /* Ext+background.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		05CBC816295493B700FE3F1C /* Pola info */ = {
@@ -232,7 +237,6 @@
 				053A1A702951E1C6005C6FF6 /* StartVC.swift in Sources */,
 				05D9B51129534F2E00AFEC13 /* Calculations.swift in Sources */,
 				053F0D34296838E8006EB52F /* PersistanceManager.swift in Sources */,
-				053F0D392968AE2D006EB52F /* Images.swift in Sources */,
 				05725B392966D62400B0EF7A /* SecondChildVC.swift in Sources */,
 				053A1A822951E463005C6FF6 /* TPButton.swift in Sources */,
 				0533B1CF296C6000006CBBBB /* ParentVC.swift in Sources */,
@@ -395,9 +399,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,9 +431,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

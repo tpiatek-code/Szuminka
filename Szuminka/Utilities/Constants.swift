@@ -14,3 +14,9 @@ struct Constants {
     static let soundName = "Hair-dryer-sound"
     static let soundFormat = "mp3"
 }
+
+struct Images {
+    static let mainBackground = "Main background.jpg"
+    static let settingsBackground = "Settings background.jpg"
+    static let sleepBackground = "Sleep background.jpg"
+}

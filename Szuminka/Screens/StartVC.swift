@@ -26,9 +26,8 @@ class StartVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray3
         layoutUI()
-        setupBackground()
+        setupBackground(image: Images.mainBackground)
         confActionButtons()
     }
     
@@ -117,12 +116,12 @@ class StartVC: UIViewController {
         nightButton.addTarget(self, action: #selector(buttonActionNight), for: .touchUpInside)
         gearButton.addTarget(self, action: #selector(gearView), for: .touchUpInside)
         
-        let widthButton:CGFloat = 180
-        let heightButton:CGFloat = 60
+        let widthButton:CGFloat = 200
+        let heightButton:CGFloat = 80
         
         NSLayoutConstraint.activate([
             napButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            napButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -220),
+            napButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -240),
             napButton.widthAnchor.constraint(equalToConstant: widthButton),
             napButton.heightAnchor.constraint(equalToConstant: heightButton),
             
@@ -141,7 +140,7 @@ class StartVC: UIViewController {
     
     func layoutUI() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"),
-                                                            style: .plain,
+                                                            style: .done,
                                                             target: self,
                                                             action: #selector(dismissVC))
     }

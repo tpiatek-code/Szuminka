@@ -21,28 +21,20 @@ class SettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutUI()
-        setupBackground()
+        setupBackground(image: Images.settingsBackground)
+        configureBar()
         
-        addVC(vc: firstChildVC, bottomDist: 330, sleepTime: 1.5)
+        addVC(vc: firstChildVC, bottomDist: 280, sleepTime: 1.5)
         addVC(vc: secondChild, bottomDist: 40, sleepTime: 12.0)
         
         //firstChildVC.hourDelegate = self
     }
     
-    private func configureLabel() {
-        view.addSubview(label)
-        label.textAlignment = .center
-        label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.text = "placeholder"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-        
+    func configureBar() {
+        navigationController?.navigationBar.tintColor = CustomColors.greyLabels
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: CustomColors.greyLabels]
     }
+    
     
     func addVC(vc: UIViewController, bottomDist: CGFloat, sleepTime: Double) {
         addChild(vc)
@@ -51,17 +43,15 @@ class SettingsVC: UIViewController {
        
         vc.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            vc.view.heightAnchor.constraint(equalToConstant: 200),
             vc.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             vc.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            vc.view.heightAnchor.constraint(equalToConstant: 250),
             vc.view.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -bottomDist)
         ])
     }
     
     
     func layoutUI() {
-        //var backgroundObject = UIColor(patternImage: UIImage(named: Images.background)!)
-
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         self.navigationItem.rightBarButtonItem = doneButton
         
@@ -72,11 +62,3 @@ class SettingsVC: UIViewController {
         dismiss(animated: true)
     }
 }
-
-
-//extension SettingsVC: PassDataToNapDelegate {
-//    func timeSelected(napHowLong: Double) {
-//        napHour = napHowLong
-//        label.text = String(napHour)
-//    }
-//}

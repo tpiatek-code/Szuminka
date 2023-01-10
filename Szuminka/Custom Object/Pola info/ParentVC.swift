@@ -22,27 +22,28 @@ class ParentVC: UIViewController {
     func configurePickerUI() {
         customPicker.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(customPicker)
+        customPicker.tintColor = CustomColors.greyLabels
+        customPicker.overrideUserInterfaceStyle = .dark
         
         let padding: CGFloat = 40
         
         NSLayoutConstraint.activate([
-            
             customPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             customPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            customPicker.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 10),
-            customPicker.heightAnchor.constraint(equalToConstant: 120)
+            customPicker.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20),
+            customPicker.heightAnchor.constraint(equalToConstant: 110)
         ])
     }
     
     private func configureBackground() {
         view.layer.cornerRadius = 20
-        view.backgroundColor = CustomColors.granatLight
+        view.backgroundColor = CustomColors.granat
     }
     
     func configureLabel(labelName: String) {
         view.addSubview(label)
         label.textAlignment = .center
-        label.textColor = .label
+        label.textColor = CustomColors.greyLabels
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.text = labelName
         label.translatesAutoresizingMaskIntoConstraints = false

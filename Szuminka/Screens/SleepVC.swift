@@ -20,6 +20,7 @@ class SleepVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackground(image: Images.sleepBackground)
         layoutUI()
         configureLabelUI()
         checkForKind()
@@ -40,7 +41,7 @@ class SleepVC: UIViewController {
     }
     
     func calculationLabelNew() {
-        timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
     }
     
     @objc func timerCounter() {
@@ -75,6 +76,7 @@ class SleepVC: UIViewController {
         timeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         timeLabel.font = UIFont.systemFont(ofSize: 30)
         timeLabel.text = "TIME START!"
+        timeLabel.textAlignment = .center
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(timeLabel)
         

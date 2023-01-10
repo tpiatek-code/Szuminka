@@ -9,10 +9,10 @@ import UIKit
 
 extension UIViewController {
     
-    func setupBackground() {
+    func setupBackground(image: String) {
         let imageView: UIImageView = {
             let imageView = UIImageView(frame: .zero)
-            imageView.image = UIImage(named: Images.background)
+            imageView.image = UIImage(named: image)
             imageView.contentMode = .scaleAspectFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
             return imageView
@@ -26,6 +26,12 @@ extension UIViewController {
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func setupGradientBackground() {
+        var gradient = CustomColors.gradientBackground
+        gradient.frame = view.bounds
+        view.layer.addSublayer(gradient)
     }
 }
 

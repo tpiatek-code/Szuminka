@@ -21,9 +21,7 @@ class TPGearButton: UIButton {
     
     private func configureButton() {
         //setImage(UIImage(systemName: "gearshape"), for: .normal)
-        
-        
-        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light, scale: .large)
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .thin, scale: .large)
         let largeBoldDoc = UIImage(systemName: "gearshape", withConfiguration: largeConfig)
         setImage(largeBoldDoc, for: .normal)
         
