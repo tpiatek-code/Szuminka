@@ -10,6 +10,7 @@ import UIKit
 struct CustomColors {
     //buttons
     static var granat       = UIColor(red: 0.04, green: 0.06, blue: 0.08, alpha: 1.0)
+    static var granat2      = UIColor(red: 0.07, green: 0.082, blue: 0.149, alpha: 1.0)
     static var granatLight  = UIColor(red: 0.0, green: 0.2, blue: 0.35, alpha: 1.0)
     static let navyButton   = UIColor(red: 0.039, green: 0.0628, blue: 0.145, alpha: 1.0)
     

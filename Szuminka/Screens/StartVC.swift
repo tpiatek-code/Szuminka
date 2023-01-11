@@ -11,8 +11,8 @@ import AVFoundation
 
 class StartVC: UIViewController {
     
-    let napButton = TPButton(backgroundColor: CustomColors.granat, title: Constants.napButton)
-    let nightButton = TPButton(backgroundColor: CustomColors.granat, title: Constants.nightButton)
+    let napButton = TPButton(backgroundColor: CustomColors.granat2, title: Constants.napButton)
+    let nightButton = TPButton(backgroundColor: CustomColors.granat2, title: Constants.nightButton)
     let gearButton = TPGearButton()
     
     var player: AVAudioPlayer?
@@ -49,7 +49,7 @@ class StartVC: UIViewController {
         let sleepVC = SleepVC()
         sleepVC.title = title
         
-        //Persistance
+        //Settings persistance
         let defaults = UserDefaults.standard
         
         //nap
@@ -67,14 +67,12 @@ class StartVC: UIViewController {
     }
     
     @objc func gearView() {
-        print("SETTINGS VIEW")
         let settingsVC = SettingsVC()
         settingsVC.title = "Settings"
         
         let navController = UINavigationController(rootViewController: settingsVC)
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
-        
     }
     
     
@@ -101,11 +99,6 @@ class StartVC: UIViewController {
     func stopSound() {
         player?.stop()
     }
-
-    
-    @objc func updateLabel() {
-        print("Pyk")
-    }
     
 
     func confActionButtons() {
@@ -121,12 +114,12 @@ class StartVC: UIViewController {
         
         NSLayoutConstraint.activate([
             napButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            napButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -240),
+            napButton.bottomAnchor.constraint(equalTo: nightButton.topAnchor, constant: -20),
             napButton.widthAnchor.constraint(equalToConstant: widthButton),
             napButton.heightAnchor.constraint(equalToConstant: heightButton),
             
             nightButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nightButton.topAnchor.constraint(equalTo: napButton.bottomAnchor, constant: 20),
+            nightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
             nightButton.widthAnchor.constraint(equalToConstant: widthButton),
             nightButton.heightAnchor.constraint(equalToConstant: heightButton),
             

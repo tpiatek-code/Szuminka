@@ -9,12 +9,12 @@ import UIKit
 
 class SecondChildVC: ParentVC {
     
-    let nightArray = [7, 8, 9, 10, 11, 12]
+    let nightArray: [String] = ["7 h", "8 h", "9 h", "10 h", "11 h", "12 h"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePickerUI()
-        configureLabel(labelName: Constants.nightButton)
+        configureLabel(labelName: Constants.setupNightButton)
     }
     
     override func configurePickerUI() {

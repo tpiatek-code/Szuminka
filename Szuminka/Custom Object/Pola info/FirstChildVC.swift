@@ -9,14 +9,12 @@ import UIKit
 
 class FirstChildVC: ParentVC {
     
-    let napArray = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]
+    let napArray: [String] = ["0.01 h test", "0.5 h", "1 h", "1.5 h", "2 h", "2.5 h", "3 h"]
     
-//    weak var hourDelegate: PassDataToNapDelegate?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePickerUI()
-        configureLabel(labelName: Constants.napButton)
+        configureLabel(labelName: Constants.setupNapButton)
     }
     
     override func configurePickerUI() {
@@ -51,10 +49,8 @@ extension FirstChildVC: UIPickerViewDelegate, UIPickerViewDataSource {
             let defaults = UserDefaults.standard
             defaults.set(self.napArray[row], forKey: "nap")
             
-            //let row = self.napArray[row]
             UserDefaults.standard.set(row, forKey: "pickerViewRowNap")
         }
-        //hourDelegate?.timeSelected(napHowLong: napArray[row])
-        
+
     }
 }

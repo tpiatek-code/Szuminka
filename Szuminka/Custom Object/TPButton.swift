@@ -33,6 +33,8 @@ class TPButton: UIButton {
         layer.shadowOpacity = 1
         layer.shadowRadius = 100
 
+        layer.borderWidth = 2
+        layer.borderColor = CustomColors.greyLabels.cgColor
         setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }

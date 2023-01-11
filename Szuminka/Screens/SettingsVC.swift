@@ -26,8 +26,6 @@ class SettingsVC: UIViewController {
         
         addVC(vc: firstChildVC, bottomDist: 280, sleepTime: 1.5)
         addVC(vc: secondChild, bottomDist: 40, sleepTime: 12.0)
-        
-        //firstChildVC.hourDelegate = self
     }
     
     func configureBar() {

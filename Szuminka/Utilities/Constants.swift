@@ -9,7 +9,12 @@ import Foundation
 
 struct Constants {
     static let napButton = "Nap time!"
-    static let nightButton = "Good night"
+    static let nightButton = "Night time!"
+    static let doneButton = "Done"
+    
+    //setup
+    static let setupNapButton   = "Setup nap time!"
+    static let setupNightButton = "Setup night time!"
     
     static let soundName = "Hair-dryer-sound"
     static let soundFormat = "mp3"
